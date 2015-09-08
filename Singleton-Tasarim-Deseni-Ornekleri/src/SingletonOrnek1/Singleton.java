@@ -3,7 +3,7 @@ package SingletonOrnek1;
 public class Singleton {
 	
 	private static Singleton instance=null;
-	private Singleton(){	}// protected belirteçde tanýmlayabilirdik
+	private Singleton(){	}// protected belirtecinide tanýmlayabilirdik
 	/*
 	 * yani Singleton singletonNesne1=new Singleton(); bunu yazmamýz durumunda artýk hata verecek
 	 * çünkü private yaptýðýmýz için nesne oluþmasýný engelledik.
@@ -15,7 +15,6 @@ public class Singleton {
 		if(instance==null){
 			instance=new Singleton();
 		}
-
 		return instance;
 		
 	}

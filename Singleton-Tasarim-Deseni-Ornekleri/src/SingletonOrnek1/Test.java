@@ -7,6 +7,7 @@ public class Test {
 		Singleton singletonNesne2=Singleton.getInstance();
 
 		//Singleton singletonNesne2=new Singleton();
+		//yukarýdaki kod hata verir.
 		
 		if(singletonNesne1==singletonNesne2)
 			System.out.println("Nesneler Ayný!");
