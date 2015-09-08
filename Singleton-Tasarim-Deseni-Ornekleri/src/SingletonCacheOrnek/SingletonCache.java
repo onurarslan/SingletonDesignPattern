@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 /*
  * bir web projesinde performansarttýrmak için cache iþlemleri yapýlmaktadýr.
- * 
+ * bu cache iþleminde her 2 saatte bir veri gösterimi yenilenmektedir.
  */
 public class SingletonCache {
 	Connection conn=null;
