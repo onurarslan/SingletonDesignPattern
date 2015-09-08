@@ -3,7 +3,9 @@ package SingletonOrnek1;
 public class Singleton {
 	
 	private static Singleton instance=null;
-	private Singleton(){	}// protected belirtecinide tanýmlayabilirdik
+	private Singleton(){
+		System.out.println("Singleton oluþtu!");
+	}// protected belirtecinide tanýmlayabilirdik
 	/*
 	 * yani Singleton singletonNesne1=new Singleton(); bunu yazmamýz durumunda artýk hata verecek
 	 * çünkü private yaptýðýmýz için nesne oluþmasýný engelledik.
