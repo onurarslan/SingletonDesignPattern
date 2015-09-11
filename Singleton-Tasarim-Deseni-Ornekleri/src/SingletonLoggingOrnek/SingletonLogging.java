@@ -11,23 +11,22 @@ public class SingletonLogging {
 	
 	//singleton kurallarý
 	private static SingletonLogging instance=null;
-	private static Object lock=new Object();
+	private static Object lock=new Object();//synchronized e giren threadler bu deðiþkeni tutacak sonrasýnda serbest býrakacak
 	
-	protected SingletonLogging(){	}
-	
-	//logging field
-	public enum LogLevel {DEBUG, INFO, WARNING, ERROR, FATAL};
-	private Logger logger;
-	
-	public SingletonLogging (Logger logger){
-		this();
-		setLogger(logger);
+	private SingletonLogging(Logger logger){//Log kayýtlarýný Logger sýnýfý ile oluþturulacak
+		setLogger(logger);	//yapýcý methoda aktarýlan geçici logger nesnesi setLogger metodu ile kalýcý olarak logger deðiþkenine aktarýlacak
 	}
 	
+	//logging field
+	public enum LogLevel {DEBUG, INFO, WARNING, ERROR, FATAL};//log hata seviyeleri
+	private Logger logger;//loglarý tutan deðiþken
+	
+	//metoda parametre olarak gelen logger nesnesi kalýcý olarak logger deðiþkenine atanýyor
 	public void setLogger(Logger logger){
 		this.logger=logger;
 	}
 	
+	//singleton kurallarýna uygun olarak tek nesne üretiyoruz
 	public static SingletonLogging getLogger(){
 		if(instance==null){
 			synchronized (lock) {
@@ -39,7 +38,7 @@ public class SingletonLogging {
 		return instance;
 	}
 	
-	
+	//log düzeylerine göre mesajlarý yaz
 	public void Log(String msg, LogLevel logLevel){
 		switch (logLevel) {
 		case DEBUG:
