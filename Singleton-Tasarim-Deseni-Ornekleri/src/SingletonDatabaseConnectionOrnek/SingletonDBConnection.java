@@ -28,7 +28,7 @@ public class SingletonDBConnection{
 		Connection dbConn=null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");//hangi veritabaný türü ile çalýþacaðýmýzý tanýmlýyoruz
-			dbConn = DriverManager.getConnection("jdbc:mysql://94.73.148.187:3306/onur","rara","XBrg38Z0");//veri tabanýna ait host ve veritabaný adýný ve veritabanýna ulaþacak olan kullanýcý adý ve þifresini tanýmlýyoruz
+			dbConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/veritabani","kullaniciadi","sigre");//veri tabanýna ait host ve veritabaný adýný ve veritabanýna ulaþacak olan kullanýcý adý ve þifresini tanýmlýyoruz
 		}catch(SQLException e) {
             System.err.println(e.getMessage());            
 		}catch(ClassNotFoundException e){
