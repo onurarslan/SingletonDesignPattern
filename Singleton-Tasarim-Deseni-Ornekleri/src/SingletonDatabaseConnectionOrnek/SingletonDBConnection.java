@@ -39,10 +39,10 @@ public class SingletonDBConnection{
 	
 	public List<Personel> getPersonelList(){
 		List<Personel> listPersonel=new ArrayList<Personel>();
-		Connection conn = null;
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		String query="Select AD, SOYAD FROM Personel";
+		Connection conn = null;//veritabaný baðlantýsý saðlar
+		PreparedStatement stmt = null;//veritabaný sorgularý yapmamýzý saðlar
+		ResultSet rs = null;//sorgu sonuçlarýný tutar
+		String query="Select AD, SOYAD FROM Personel";//veritabaný sorgumuz
 		try {
 			conn=getConnection();//veritabaný baðlantýsýný açar
 			stmt = conn.prepareStatement(query);//sorgu iþlemini gerçekleþtirir
