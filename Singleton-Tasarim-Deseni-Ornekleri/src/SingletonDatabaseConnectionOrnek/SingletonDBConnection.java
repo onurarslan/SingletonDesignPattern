@@ -28,7 +28,7 @@ public class SingletonDBConnection{
 		Connection dbConn=null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");//hangi veritabaný türü ile çalýþacaðýmýzý tanýmlýyoruz
-			dbConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/database","veritabani_kullanici_adi","sifre");//veri tabanýna ait host ve veritabaný adýný ve veritabanýna ulaþacak olan kullanýcý adý ve þifresini tanýmlýyoruz
+			dbConn = DriverManager.getConnection("jdbc:mysql://94.73.148.187:3306/onur","rara","XBrg38Z0");//veri tabanýna ait host ve veritabaný adýný ve veritabanýna ulaþacak olan kullanýcý adý ve þifresini tanýmlýyoruz
 		}catch(SQLException e) {
             System.err.println(e.getMessage());            
 		}catch(ClassNotFoundException e){
@@ -42,10 +42,10 @@ public class SingletonDBConnection{
 		Connection conn = null;//veritabaný baðlantýsý saðlar
 		PreparedStatement stmt = null;//veritabaný sorgularý yapmamýzý saðlar
 		ResultSet rs = null;//sorgu sonuçlarýný tutar
-		String query="Select AD, SOYAD FROM Personel";//veritabaný sorgumuz
+		String query="SELECT * FROM personel";//veritabaný sorgumuz
 		try {
 			conn=getConnection();//veritabaný baðlantýsýný açar
-			stmt = conn.prepareStatement(query);//sorgu iþlemini gerçekleþtirir
+			stmt = conn.prepareStatement("SELECT * FROM personel");//sorgu iþlemini gerçekleþtirir
 			rs=stmt.executeQuery();//sorgu sonucu gelen verileri tutar
 			
 			while (rs.next()) {//gelen her veriyi
